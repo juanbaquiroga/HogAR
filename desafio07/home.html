@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Principal</title>
+</head>
+<body>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-1" href="#">Hog<span class="logo-2">AR</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <a class="btn btn-carrito btn-outline-light" type=button href="cart.html"> 
+                    <i class="bi-cart-fill" ></i>Carrito
+                    <span class="badge bg-light text-black ms-1 rounded-pill" id="cartCounter"></span>
+                </a>
+                <form id="formulario">
+                    <input id="inputa" type="text" class="input" placeholder="Proximamente" />
+                    <button class="submit" type="submit">buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+        <div class="contenedor">
+            <div class="title">
+                <div>
+                    <h2 class="title">PRODUCTOS</h2>
+                </div>
+            </div>
+            <div id="containerProduct" class="cards">
+
+            </div>
+        </div>
+      <script src="./js/cartMain.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> 
+      <script type="module" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <!-- Jquery -->
+      <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+</body>
+</html>

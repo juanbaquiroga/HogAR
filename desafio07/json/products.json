@@ -1,0 +1,7 @@
+[
+    {"id":1, "name":"silla nordica", "price":5000, "img":"./img/productos/silla-nordica.jpg"},
+    {"id":2, "name":"escritorio industrial", "price":15000, "img":"./img/productos/escritorio-industrial.jpg"},
+    {"id":3, "name":"escritorio nordico", "price":18000, "img":"./img/productos/escritorio-nordico.jpg"},
+    {"id":4, "name":"sillon escandinavo", "price":50000, "img":"./img/productos/sillon-escandinavo.jpg"}
+    
+]
