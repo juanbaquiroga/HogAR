@@ -64,7 +64,7 @@ function addCart(e){
     localStorage.setItem('cart', JSON.stringify(cart));
     Swal.fire({
         title: `${idFound.name}`,
-        text: "has añadido este item tu carrito",
+        text: "has añadido este item a tu carrito",
         icon: "success",
         timer: 6000,
     });
