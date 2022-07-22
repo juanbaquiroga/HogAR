@@ -3,6 +3,9 @@ let cart;
 let products;
 // localStorage.clear()
 
+
+// fetch('https://api-dolar-argentina.herokuapp.com/api/dolarblue')
+
 if(JSON.parse(localStorage.getItem('cart')) || JSON.parse(localStorage.getItem('users')))  {
     cart = JSON.parse(localStorage.getItem('cart'));
     users = JSON.parse(localStorage.getItem('users'))
@@ -59,7 +62,7 @@ function addCart(e){
         cart = [...cartFilter, {...inCart, cantidad: inCart.cantidad + 1}]
     }
     localStorage.setItem('cart', JSON.stringify(cart));
-    swal({
+    Swal.fire({
         title: `${idFound.name}`,
         text: "has añadido este item tu carrito",
         icon: "success",

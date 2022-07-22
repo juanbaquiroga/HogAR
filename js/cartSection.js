@@ -101,15 +101,28 @@ function deleteItem(item){
 }
 
 let emptyBtn = document.getElementById('emptyBtn');
-emptyBtn.addEventListener('click', emptyCart);
+emptyBtn.addEventListener('click', swalEmptyCart);
 let buyBtn = document.getElementById('buyBtn');
 buyBtn.addEventListener('click', buyCart);
 
+function swalEmptyCart(e){
+    {Swal.fire({
+        title:'¿desea vaciar su carrito?',
+        icon:'warning',
+        showCancelButton: true,
+        confirmButtonText: 'si, vaciar',
+        cancelButtonText: 'cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                emptyCart()
+            }
+        })
+    }
+}
 
 function emptyCart(e){
     localStorage.clear('cart')
     location.reload();
-
 }
 
 let btnItems = document.getElementsByClassName('btnItems');
@@ -158,9 +171,21 @@ function buyCart(e){
     buyBtn.setAttribute('data-bs-toggle',"modal")
     buyBtn.setAttribute('data-bs-target', "#miModal")
     let mostrarModal = document.getElementById('mostrarModal');
-    swal({
+    Swal.fire({
         title: `total: ${totalCart().toLocaleString()}`,
         icon: "info",
-        buttons: ["cancelar", "comprar"]
+        showCancelButton: true,
+        reverseButtons: true,
+        confirmButtonText: 'comprar',
+        cancelButtonText: 'cancelar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: 'compra realizada',
+            icon: 'success'
+        })
+        } else if (
+          result.dismiss === Swal.DismissReason.cancel
+        )swalEmptyCart()
     });
 }
