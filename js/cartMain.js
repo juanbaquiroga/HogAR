@@ -1,11 +1,8 @@
 let users;
 let cart;
 let products;
+
 // localStorage.clear()
-
-
-// fetch('https://api-dolar-argentina.herokuapp.com/api/dolarblue')
-
 if(JSON.parse(localStorage.getItem('cart')) || JSON.parse(localStorage.getItem('users')))  {
     cart = JSON.parse(localStorage.getItem('cart'));
     users = JSON.parse(localStorage.getItem('users'))
@@ -15,6 +12,37 @@ if(JSON.parse(localStorage.getItem('cart')) || JSON.parse(localStorage.getItem('
     cart = JSON.parse(localStorage.getItem('cart'))
     users = JSON.parse(localStorage.getItem('users'))
 }
+
+
+
+const fetchCotizacion = () => {
+    //fetch('./data.json').then((response) =>response.json())
+	fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales').then((response) =>response.json())
+	.then((result)=>{
+        console.log(result)
+        mostrarCotizacion(result)
+	}).catch((err)=>{
+		console.error(err)
+	})
+}
+fetchCotizacion();
+
+const mostrarCotizacion = (body) =>{
+    let cotizacion = document.getElementById('cotizacion')
+    cotizacion.innerHTML = 'Dolar Blue: ' + body[1].casa.venta 
+}
+
+function addedProductToast() {
+    Toastify({
+      text: "Agregaste un producto al carrito",
+      duration: 2000,
+      close: true,
+      position: "center",
+      backgroundColor: "#000",
+    }).showToast();
+};
+
+
 fetchData();
 function fetchData(){
     fetch('json/products.json')
@@ -62,11 +90,12 @@ function addCart(e){
         cart = [...cartFilter, {...inCart, cantidad: inCart.cantidad + 1}]
     }
     localStorage.setItem('cart', JSON.stringify(cart));
-    Swal.fire({
-        title: `${idFound.name}`,
-        text: "has añadido este item a tu carrito",
-        icon: "success",
-        timer: 6000,
-    });
+    Toastify({
+        text: `Agregaste ${idFound.name} al carrito`,
+        duration: 1500,
+        close: true,
+        position: "center",
+        backgroundColor: "rgb(30, 30, 30)",
+    }).showToast();
 }
 
