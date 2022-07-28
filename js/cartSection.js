@@ -36,10 +36,10 @@ if(cart.length == 0){
     const cartContainer = `
             <table class="table text-center">
                 <thead>
-                <tr>
+                <tr class="fila">
                     <th scope="col"></th>
                     <th scope="col">FOTO</th>
-                    <th scope="col">NOMBRE PRODUCTO</th>
+                    <th scope="col">PRODUCTO</th>
                     <th scope="col">CANTIDAD</th>
                     <th scope="col">PRECIO($)</th>
                     <th scope="col">SUBTOTAL($)</th>
@@ -48,11 +48,11 @@ if(cart.length == 0){
                 <tbody id="cartContent" class="align-middle">
                 </tbody>
                 <tfoot>
-                    <tr>
+                    <tr class=""fila>
                         <th scope="row"></th>
                         <td colspan="3"></td>
-                        <td><b class="fs-4">TOTAL:</b></td>
-                        <td><b class="fs-4">$${totalCart().toLocaleString()}</b></td>
+                        <td><b class="totalCarrito">TOTAL:</b></td>
+                        <td><b class="totalCarrito">$${totalCart().toLocaleString()}</b></td>
                     </tr>
                 </tfoot>
             </table>
@@ -66,7 +66,7 @@ if(cart.length == 0){
                 const element = cart[i];
                 const { id, name, img, price, cantidad } = element;
                 const cartItem = `
-                    <tr>
+                    <tr class=""fila>
                         <th scope="row"><button id="trashItemBtn" data-producto="${id}" class="trashItem"></button></th>
                         <td><img src=${img} class="imgProductsCart" alt="${name}"></td>
                         <td>${name}</td>
@@ -184,6 +184,9 @@ function buyCart(e){
             title: 'compra realizada',
             icon: 'success'
         })
+        setTimeout(function(){
+            emptyCart()
+        }, 2000);
         } else if (
           result.dismiss === Swal.DismissReason.cancel
         )swalEmptyCart()

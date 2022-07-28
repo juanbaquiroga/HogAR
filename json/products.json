@@ -2,6 +2,12 @@
     {"id": 1, "name":"silla nordica", "price":5000, "img":"./img/productos/silla-nordica.jpg"},
     {"id": 2, "name":"escritorio industrial", "price":15000, "img":"./img/productos/escritorio-industrial.jpg"},
     {"id": 3, "name":"escritorio nordico", "price":18000, "img":"./img/productos/escritorio-nordico.jpg"},
-    {"id": 4, "name":"sillon escandinavo", "price":50000, "img":"./img/productos/sillon-escandinavo.jpg"}
-    
+    {"id": 4, "name":"sillon escandinavo", "price":50000, "img":"./img/productos/sillon-escandinavo.jpg"},
+    {"id": 5, "name":"set 12 cubiertos dorados", "price":6500, "img":"./img/productos/cubiertos-dorados.jpg"},
+    {"id": 6, "name":"set 6 platos azules 24cm", "price":7000, "img":"./img/productos/platos.jpg"},
+    {"id": 7, "name":"escritorio escandinavo", "price":25000, "img":"./img/productos/escritorio-escandinavo.jpg"},
+    {"id": 8, "name":"sillon nordico individual", "price":50000, "img":"./img/productos/sillon-nordico.jpg"},
+    {"id": 9, "name":"silla estilo industrial", "price":6000, "img":"./img/productos/silla-industrial.jpg"},
+    {"id": 10, "name":"lampara colgante estilo industrial", "price":15000, "img":"./img/productos/lampara-industrial.jpg"},
+    {"id": 11, "name":"lampara de pie estilo nordico", "price":8500, "img":"./img/productos/lampara-nordica.jpg"}
 ]
