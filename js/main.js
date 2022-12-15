@@ -15,11 +15,11 @@ DOMlogin.innerHTML = `
             <form>
                 <div class="">
                     <label for="user" class="form-label">Ingresa tu nombre</label>
-                    <input type="user" class="form-control" name="user" id="name">
+                    <input type="user" class="form-control" name="user" id="name" required>
                 </div>
                 <div class="">
                     <label for="email" class="form-label">Correo Electronico</label>
-                    <input type="email" class="form-control" name="email" id="email">
+                    <input type="email" class="form-control" name="email" id="email" required>
                 </div>
             </form>
             <button type="button" id="getInfo" class="btn btn-dark">Iniciar Sesion</button>
